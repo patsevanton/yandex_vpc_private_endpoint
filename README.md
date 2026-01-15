@@ -8,11 +8,13 @@ This module creates and manages a VPC Private Endpoint within Yandex Cloud. Priv
 
 ## Usage
 
+See the `examples/` directory for working examples.
+
 ### Basic Example
 
 ```hcl
 module "private_endpoint" {
-  source = "./modules/yandex_vpc_private_endpoint"
+  source = "github.com/patsevanton/yandex_vpc_private_endpoint"
 
   name        = "object-storage-private-endpoint"
   description = "Private endpoint for Object Storage"
@@ -37,7 +39,7 @@ module "private_endpoint" {
 
 ```hcl
 module "private_endpoint" {
-  source = "./modules/yandex_vpc_private_endpoint"
+  source = "github.com/patsevanton/yandex_vpc_private_endpoint"
 
   name        = "object-storage-private-endpoint"
   description = "description for private endpoint"
@@ -64,6 +66,10 @@ module "private_endpoint" {
   }
 }
 ```
+
+For more examples, see the [examples](./examples/) directory:
+- [simple](./examples/simple/) - Basic usage with minimal configuration
+- [complete](./examples/complete/) - Full example with all options
 
 ## Requirements
 
@@ -106,6 +112,10 @@ module "private_endpoint" {
   - `subnet_id` + `address` (optional)
   - `subnet_id` (alone)
 
+## Authors
+
+Module managed by [Anton Patsev](https://github.com/patsevanton).
+
 ## License
 
-This module is provided as-is.
+MIT Licensed. See [LICENSE](./LICENSE) for full details.

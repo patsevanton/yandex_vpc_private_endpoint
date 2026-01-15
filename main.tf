@@ -18,7 +18,7 @@ resource "yandex_vpc_private_endpoint" "this" {
   dynamic "endpoint_address" {
     for_each = var.endpoint_address != null ? [var.endpoint_address] : []
     content {
-      subnet_id  = endpoint_address.value.subnet_id
+      subnet_id  = try(endpoint_address.value.subnet_id, null)
       address    = try(endpoint_address.value.address, null)
       address_id = try(endpoint_address.value.address_id, null)
     }
