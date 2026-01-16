@@ -142,7 +142,7 @@ module "private_endpoint" {
   name        = "object-storage-private-endpoint"
   description = "description for private endpoint"
   network_id  = yandex_vpc_network.lab-net.id
-  folder_id   = "b1g1234567890abcdef"
+  folder_id   = "folder_id"
 
   endpoint_address = {
     subnet_id = yandex_vpc_subnet.lab-subnet-a.id
